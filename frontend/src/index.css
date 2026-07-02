@@ -1,0 +1,88 @@
+/*******************************
+ *  Geral
+ ******************************/
+
+.maindiv {
+  display: grid;
+}
+
+
+
+/*******************************
+ *  Cabeçalho
+ ******************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header input {
+  height: 25px;
+  align-self: center;
+}
+
+/*******************************
+ *  Abas de Geração
+ ******************************/
+
+.generation-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom:20px;
+  justify-content: space-around;
+  width: 50%;
+  justify-self: center;
+}
+
+@media (max-width: 960px) {
+  .generation-tabs{
+    width: auto;
+  }
+}
+
+.generation-tabs button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #4d74ba;
+  color: white;
+}
+
+.generation-tabs button.active {
+  background: #e53935;
+  color: white;
+}
+
+
+/*******************************
+ *  Pokemon Card
+ ******************************/
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+
+
