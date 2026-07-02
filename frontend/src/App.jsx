@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getGeneration } from "./services/api";
+import { getGeneration, getPokemon } from "./services/api";
 import PokemonCard from "./components/PokemonCard";
 import GenerationTabs from "./components/GenerationTabs";
 import PokemonGrid from "./components/PokemonGrid";
 import SearchBar from "./components/SearchBar";
+import PokemonModal from "./components/PokemonModal";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(search.toLowerCase())
   );
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   useEffect(() => {
     async function loadGeneration() {
@@ -27,6 +29,19 @@ function App() {
     loadGeneration();
   }, [generation]);
   
+  async function handlePokemonClick(id) {
+    try {
+      const pokemon = await getPokemon(id);
+      setSelectedPokemon(pokemon);
+
+
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
   return (
     <div className="maindiv">
       <header>
@@ -45,8 +60,15 @@ function App() {
 
       <PokemonGrid
         pokemons={filteredPokemons}
+        onSelect={handlePokemonClick}
       />
 
+      {selectedPokemon && (
+        <PokemonModal
+          pokemon={selectedPokemon}
+          onClose={() => setSelectedPokemon(null)}
+        />
+      )}
 
     </div>
   );
