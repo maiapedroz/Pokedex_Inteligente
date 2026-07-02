@@ -10,3 +10,8 @@ export async function getGeneration(id){
     const response = await api.get(`/pokemon/generation/${id}`);
     return response.data;
 }
+
+export async function getPokemon(id){
+    const response = await api.get(`/pokemon/${id}`);
+    return response.data;
+}
