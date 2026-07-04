@@ -1,8 +1,12 @@
 from fastapi import FastAPI
-from app.api.pokemon_routes import router as pokemon_router
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+from app.api.pokemon_routes import router as pokemon_router
+from app.api.chat_routes import router as chat_router
+
+
+
+app = FastAPI(title="Pokédex API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,4 +17,6 @@ app.add_middleware(
 )
 
 
+
 app.include_router(pokemon_router)
+app.include_router(chat_router)
