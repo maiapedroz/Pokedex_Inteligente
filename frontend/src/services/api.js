@@ -15,3 +15,12 @@ export async function getPokemon(id){
     const response = await api.get(`/pokemon/${id}`);
     return response.data;
 }
+
+export async function askLLM(pokemon, question){
+    const response = await api.post("/chat", {
+        pokemon,
+        question
+    });
+
+    return response.data;
+}

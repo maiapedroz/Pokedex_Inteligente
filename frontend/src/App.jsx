@@ -16,6 +16,8 @@ function App() {
   );
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
+
+  // Carrega a página inicial com a geração 1
   useEffect(() => {
     async function loadGeneration() {
       try {
@@ -28,13 +30,25 @@ function App() {
 
     loadGeneration();
   }, [generation]);
+
+
+  // Trava o rolamento da página enquanto o modal estiver aberto
+  useEffect(() => {
+      if (selectedPokemon) {
+          document.body.style.overflow = "hidden";
+      } else {
+          document.body.style.overflow = "auto";
+      }
+  
+      return () => {
+          document.body.style.overflow = "auto";
+      };
+  }, [selectedPokemon]);
   
   async function handlePokemonClick(id) {
     try {
       const pokemon = await getPokemon(id);
       setSelectedPokemon(pokemon);
-
-
 
     } catch (error) {
       console.error(error);
@@ -45,7 +59,7 @@ function App() {
   return (
     <div className="maindiv">
       <header>
-        <h1>Pokédex</h1>
+        <h1>Pokédex Inteligente</h1>
         <SearchBar
           search={search}
           setSearch={setSearch}
