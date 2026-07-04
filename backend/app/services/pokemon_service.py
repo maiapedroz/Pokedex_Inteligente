@@ -21,7 +21,11 @@ def get_pokemon(name: str):
         "stats": {
             stat["stat"]["name"]: stat["base_stat"]
             for stat in data["stats"]
-        }
+        },
+        "height": data["height"],
+        "weight": data["weight"],
+        "abilities": [a["ability"]["name"] for a in data["abilities"]],
+        "cries": data["cries"]["latest"]
     }
 
 def get_gen(id: int):
@@ -35,10 +39,10 @@ def get_gen(id: int):
 
     return {
         "generation": data["id"],
-        "pokemons": sorted([
+        "pokemons": sorted([        # A API não está organizada em ordem crescente
             ({
                 "name": pokemon["name"],
-                "id": int(pokemon["url"].split("/")[-2]),
+                "id": int(pokemon["url"].split("/")[-2]),           # O sort estava ordenando com base em uma string invés de um int
                 "image": f"{IMG_URL}{pokemon["url"].split("/")[-2]}.png"
             })
             for pokemon in data["pokemon_species"]

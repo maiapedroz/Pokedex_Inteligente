@@ -1,4 +1,4 @@
-
+import { capitalize } from "../utils";
 
 
 function PokemonCard({ pokemon, onSelect }) {
@@ -14,7 +14,7 @@ function PokemonCard({ pokemon, onSelect }) {
 
             <h3>#{pokemon.id}</h3>
 
-            <p>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
+            <p>{capitalize(pokemon.name)}</p>
         </div>
     );
 }
