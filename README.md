@@ -49,9 +49,8 @@ O objetivo foi construir uma aplicação organizada, com separação de responsa
 /
 ├── backend/
 │   ├── app/
-│   │   ├── routes/
+│   │   ├── api/
 │   │   ├── services/
-│   │   ├── prompts.py
 │   │   ├── schemas.py
 │   │   └── main.py
 │   └── pyproject.toml
@@ -59,8 +58,11 @@ O objetivo foi construir uma aplicação organizada, com separação de responsa
 └── frontend/
     ├── src/
     │   ├── components/
+    │   ├── img/
     │   ├── services/
     │   ├── utils/
+    │   ├── index.css
+    │   ├── utils.js
     │   └── App.jsx
     └── public/
 ```
