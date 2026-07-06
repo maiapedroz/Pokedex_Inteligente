@@ -191,6 +191,20 @@ http://localhost:5173
 
 ---
 
+# Problemas conhecidos
+
+## Limitação de carregamento das imagens
+
+As imagens exibidas nos cards são obtidas através dos sprites oficiais hospedados no GitHub (`raw.githubusercontent.com`).
+
+Em períodos de uso intenso, o GitHub pode aplicar limites temporários de requisições (rate limiting), o que pode resultar em algumas imagens demorando para carregar ou não sendo exibidas momentaneamente.
+
+Caso isso ocorra, basta aguardar alguns instantes e atualizar a página.
+
+Essa abordagem foi mantida por utilizar uma fonte oficial, estável e amplamente utilizada pela comunidade Pokémon, evitando a necessidade de armazenar localmente centenas de imagens no repositório.
+
+---
+
 # Autor
 
 Projeto desenvolvido por Pedro Maia como parte de um processo seletivo.
