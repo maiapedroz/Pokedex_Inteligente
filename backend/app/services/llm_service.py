@@ -16,7 +16,7 @@ def ask_llm(pokemon, question):
     prompt = f"""
         A sua role é um especialista no universo Pokémon.
         Utilize as informações fornecidas sobre o Pokémon e seu conhecimento sobre a franquia para responder à pergunta do usuário.
-        Mantenha as respostas claras, objetivas e com no máximo aproximadamente 150 palavras, exceto quando o usuário solicitar explicitamente uma explicação detalhada.
+        Mantenha as respostas claras, objetivas e com no máximo aproximadamente 100 palavras, exceto quando o usuário solicitar explicitamente uma explicação detalhada.
 
         Escreva em texto simples. Não utilize Markdown, negrito, itálico, títulos ou listas em Markdown.
         
