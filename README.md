@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-Esta aplicação foi desenvolvida como parte de um processo seletivo da Levva.
+Esta aplicação foi desenvolvida como parte de um processo seletivo.
 
 O projeto consiste em uma Pokédex desenvolvida em React e FastAPI, utilizando a PokeAPI como fonte de dados. Além das funcionalidades tradicionais de consulta aos Pokémon, foi implementada uma integração com um modelo de linguagem (LLM) através do OpenRouter, permitindo que o usuário faça perguntas contextualizadas sobre o Pokémon selecionado.
 
@@ -193,4 +193,4 @@ http://localhost:5173
 
 # Autor
 
-Projeto desenvolvido por Pedro Maia como parte de um processo seletivo para Levva.
+Projeto desenvolvido por Pedro Maia como parte de um processo seletivo.
